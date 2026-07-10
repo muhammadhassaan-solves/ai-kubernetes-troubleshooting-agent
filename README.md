@@ -1,16 +1,13 @@
 # AI Kubernetes Troubleshooting Agent
 
 An AI-powered Kubernetes troubleshooting dashboard that investigates a selected
-cluster, collects debugging evidence with `kubectl`, and generates a root cause
+cluster, collects debugging evidence with kubectl, and generates a root cause
 diagnosis with suggested fixes.
 
-This project was built as part of my DevOps learning journey, taught and guided
-by **Abhishek Veeramalla**.
 
 ## What This Project Does
 
-The application helps users troubleshoot Kubernetes issues from a simple web
-dashboard.
+The application helps users/developers troubleshoot Kubernetes issues from a simple web dashboard.
 
 Users can:
 
@@ -19,36 +16,19 @@ Users can:
 - Trigger a cluster investigation
 - Collect pod, log, event, deployment, and networking evidence
 - Receive an AI-generated root cause analysis
-- View suggested `kubectl` commands
+- View suggested kubectl commands
 - Save and view recent investigation history
 
 ## Tech Stack
 
-### Frontend
-
 - Next.js
 - TypeScript
-- Tailwind CSS
-- Axios
-- React Query
-
-### Backend
-
 - FastAPI
 - Python
-- Uvicorn
-- Pydantic
-- Loguru
-- HTTPX
-- kubectl
-
-### Platform and Infrastructure
-
 - Docker
-- Docker Compose
-- InsForge for authentication and investigation history
-- OpenRouter for AI reasoning
-- Kubernetes kind/local clusters for testing
+- Kubernetes
+- OpenRouter
+- InsForge
 
 ## Architecture
 
@@ -80,7 +60,7 @@ Checks whether the backend service is running.
 
 ### `GET /clusters`
 
-Reads kubeconfig contexts using `kubectl` and returns available Kubernetes
+Reads kubeconfig contexts using kubectl and returns available Kubernetes
 clusters.
 
 ### `POST /investigate`
@@ -165,17 +145,10 @@ Frontend: http://localhost:3000
 Backend:  http://localhost:8000/health
 ```
 
-## WSL and kind Note
+## WSL and kind cluster Note
 
 When running Docker Compose inside WSL with a kind cluster, the backend uses host
 networking so it can reach the Kubernetes API server from the kubeconfig.
-
-Make sure this works first:
-
-```bash
-kubectl get pods -A
-kubectl config get-contexts
-```
 
 ## Test Failure Scenarios
 
@@ -192,20 +165,6 @@ Scenarios include:
 - OOMKilled
 - Service selector mismatch
 
-## Project Structure
-
-```text
-.
-|-- backend/
-|-- frontend/
-|-- docs/
-|-- k8s-test-scenarios/
-|-- migrations/
-|-- prompts/
-|-- docker-compose.yml
-`-- README.md
-```
-
 ## Learning Outcome
 
 This project demonstrates how a DevOps troubleshooting workflow can be converted
@@ -214,5 +173,4 @@ LLM reasoning.
 
 ## Acknowledgment
 
-Special thanks to **Abhishek Veeramalla** for teaching and guiding the DevOps and
-Kubernetes concepts used in this project.
+Special thanks to **Abhishek Veeramalla** for teaching and guiding in this project project.
