@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bad-image-tag
+  namespace: ai-kubernetes-agent-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bad-image-tag
+  template:
+    metadata:
+      labels:
+        app: bad-image-tag
+    spec:
+      containers:
+        - name: app
+          image: nginx:this-tag-does-not-exist
+
