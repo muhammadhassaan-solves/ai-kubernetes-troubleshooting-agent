@@ -21,14 +21,34 @@ Users can:
 
 ## Tech Stack
 
+- FastAPI
 - Next.js
 - TypeScript
-- FastAPI
 - Python
 - Docker
 - Kubernetes
 - OpenRouter
 - InsForge
+- Codex
+
+## Walk-through
+<p align="center">
+1. Login Page <br />
+<img src="https://i.postimg.cc/DZcLpyq4/image.png"/>
+<br />
+<br />
+2. InsForge Setup <br/>
+<img src="https://i.postimg.cc/HxTTzpY8/image.png" />
+<br />
+<br />
+3. Cluster Selection and Investigation  <br/>
+<img src="https://i.postimg.cc/J7g941fx/image.png"/>
+<br />
+<br />
+4. AI Diagnosis Report  <br/>
+<img src="https://i.postimg.cc/WbwCmMFL/image.png"/>
+<br />
+<br />
 
 ## Architecture
 
@@ -173,4 +193,4 @@ LLM reasoning.
 
 ## Acknowledgment
 
-Special thanks to **Abhishek Veeramalla** for teaching and guiding in this project project.
+Special thanks to **Abhishek Veeramalla** for teaching and guiding in this project.
